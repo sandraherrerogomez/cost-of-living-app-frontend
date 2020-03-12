@@ -1,13 +1,9 @@
-
-async function msg() {
-    const response = await fetch('http://localhost:8080/cityComparator');
-    const myJson = await response.json(); //extract JSON from the http response
-}
 let searchParams=new URLSearchParams(window.location.search);
 var city1 = (searchParams.get("city1"));
 var city2 = (searchParams.get("city2"));
 var sal1 = (searchParams.get("salary1"));
 var sal2 = (searchParams.get("salary2"));
+
 
  req = {
     "city1": city1,
@@ -25,9 +21,16 @@ jQuery.ajax ({
     dataType: "json",
     contentType: "application/json; charset=utf-8",
     success: function(res){
-       console.log(res);
-        $("valueCity1").value = "66666"
 
+        var r = JSON.parse(res[0])
+        console.log(r.amountCity1Numbeo)
+        $("#valueCity1").text(r.amountCity1Numbeo+" €")
+        $("#valueCity2").text(r.amountCity2Numbeo+" €")
+        $("#nameCity1").text(r.city1Numbeo)
+        $("#nameCity2").text(r.city2Numbeo)
+        $("#salariesCompare").html("You will need <b>"+r.amountCity2Numbeo+"€</b> in <b>"+r.city2Numbeo+ "</b> to have same cost of living than in <b>"+
+            r.city1Numbeo+"</b> with <b>"+r.amountCity1Numbeo+ "</b>€")
     }
 });
+
 
