@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/returnedinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/returnedinfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/returnedinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/returnedinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userform.html" beforeDir="false" afterPath="$PROJECT_DIR$/userform.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +27,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../COLComparator (1)/COLComparator" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -58,7 +59,8 @@
       <updated>1583238318566</updated>
       <workItem from="1583238323938" duration="9425000" />
       <workItem from="1583420156082" duration="13797000" />
-      <workItem from="1584610680010" duration="970000" />
+      <workItem from="1584610680010" duration="1798000" />
+      <workItem from="1584707025879" duration="4612000" />
     </task>
     <servers />
   </component>
@@ -66,6 +68,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="580" y="186" key="FileChooserDialogImpl" timestamp="1584709410897">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="186" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1584709410897" />
     <state x="496" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1583420200695">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

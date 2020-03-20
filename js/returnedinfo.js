@@ -150,6 +150,36 @@ function renderSalaries(res){
     $("#netSal2").text(rSal2.netSalary + " €")
 }
 
+function renderGroceries(res){
+
+    var rGroceries = JSON.parse(res[5]);
+    new Chart(document.getElementById("priceGroceries"), {
+        type: 'line',
+        data: {
+            labels: ["paco",1600,1700,1750,1800,1850,1900,1950,1999,2050],
+            datasets: [ {
+                data: [168,170,178,190,203,276,408,547,675,734],
+                label: city1,
+                borderColor: "#3cba9f",
+                fill: false
+            },  {
+                data: [6,3,2,2,7,26,82,172,312,433],
+                label: city2,
+                borderColor: "#c45850",
+                fill: false
+            }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'World population per region (in millions)'
+            }
+        }
+    });
+
+}
+
 
 jQuery.ajax ({
     url: 'http://localhost:8080/cityComparator',
@@ -162,6 +192,7 @@ jQuery.ajax ({
         renderSalaries(res);
         renderChart(res);
         renderBars(res);
+        renderGroceries(res);
 
         console.log(res)
 
