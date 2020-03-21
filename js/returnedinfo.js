@@ -151,19 +151,21 @@ function renderSalaries(res){
 }
 
 function renderGroceries(res){
-
+    console.log(JSON.parse(res[5]))
     var rGroceries = JSON.parse(res[5]);
+    var rGroceries2 = JSON.parse(res[6]);
+
     new Chart(document.getElementById("priceGroceries"), {
         type: 'line',
         data: {
-            labels: ["paco",1600,1700,1750,1800,1850,1900,1950,1999,2050],
+            labels: ["Crime", "Traffic Time", "Health care", "Pollution", "CPI Rent", "Climate", "Safety"],
             datasets: [ {
-                data: [168,170,178,190,203,276,408,547,675,734],
+                data: [rIndexes.crime_index,rIndexes.traffic_time_index,rIndexes.health_care_index,rIndexes.pollution_index, rIndexes.cpi_and_rent_index, rIndexes.climate_index, rIndexes.safety_index ],
                 label: city1,
                 borderColor: "#3cba9f",
                 fill: false
             },  {
-                data: [6,3,2,2,7,26,82,172,312,433],
+                data: [rIndexes2.crime_index,rIndexes2.traffic_time_index,rIndexes2.health_care_index,rIndexes2.pollution_index, rIndexes2.cpi_and_rent_index, rIndexes2.climate_index, rIndexes2.safety_index ],
                 label: city2,
                 borderColor: "#c45850",
                 fill: false
