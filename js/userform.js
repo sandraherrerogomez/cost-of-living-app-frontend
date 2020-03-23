@@ -19,12 +19,20 @@ jQuery.ajax ({
 
     success: function(res){
         var datos = JSON.parse(res);
-        $('#currentCity').autocomplete({
-            lookup: datos,
-            onSelect: function (suggestion) {
-                $('#currentCity').html(suggestion.value);
-            }
-        });
+
+        $( function() {
+            $( "#currentCity" ).autocomplete({
+                source: datos
+            });
+        } );
+
+        $( function() {
+            $( "#destinationCity" ).autocomplete({
+                source: datos
+            });
+        } );
+
     }
 });
+
 

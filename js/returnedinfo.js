@@ -1,17 +1,22 @@
 let searchParams=new URLSearchParams(window.location.search);
-var city1 = (searchParams.get("city1"));
-var country1 = (searchParams.get("country1"));
-var country2 = (searchParams.get("country2"));
-var city2 = (searchParams.get("city2"));
+var citycountry1 = (searchParams.get("city1"));
+var citycountry2 = (searchParams.get("city2"));
 var sal1 = (searchParams.get("salary1"));
 var sal2 = (searchParams.get("salary2"));
 
+var city1aux = citycountry1.split(" -> ")
+var city1 = city1aux[0]
+var country1 = city1aux[1]
+
+var city2aux = citycountry2.split(" -> ")
+var city2 = city2aux[0]
+var country2 = city2aux[1]
 
 req = {
     "city1": city1,
     "city2": city2,
-    "country1": "Spain",
-    "country2": "Spain",
+    "country1": country1,
+    "country2": country2,
     "amountCity1": sal1,
     "amountCity2": sal2
 };
