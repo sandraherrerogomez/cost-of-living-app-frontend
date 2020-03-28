@@ -24,8 +24,8 @@ req = {
 
 function renderBars(res){
 
-    var rIndexes = JSON.parse(res[3]);
-    var rIndexes2 = JSON.parse(res[4]);
+    var rIndexes = JSON.parse(res[0]);
+    var rIndexes2 = JSON.parse(res[1]);
     new Chart($("#groupedBars"), {
         type: 'bar',
         data: {
@@ -50,14 +50,15 @@ function renderBars(res){
         }
     });
 
+    $('#ajaxBusy').hide();
 }
 
 function renderChart(res){
     Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
     Chart.defaults.global.defaultFontColor = '#858796';
 
-    var rSal2 = JSON.parse(res[2]);
-    var rSal1 = JSON.parse(res[1]);
+    var rSal2 = JSON.parse(res[1]);
+    var rSal1 = JSON.parse(res[0]);
     $("#chartTitle1").text("Salary Taxes Distribution " +city1 +", " +country1);
     $("#chartTitle2").text("Salary Taxes Distribution " +city2 +", " +country2);
 
@@ -131,13 +132,10 @@ function renderChart(res){
 
 
 
-function renderSalaries(res){
-    console.log(res);
-    var r = JSON.parse(res[0]);
-    var rSal1 = JSON.parse(res[1]);
-    var rSal2 = JSON.parse(res[2]);
-
-
+function renderSalaries(r, salaries){
+    console.log(salaries)
+    var rSal1= JSON.parse(salaries[0]);
+    var rSal2= JSON.parse(salaries[1]);
     $("#valueCity1").text(r.amountCity1Numbeo + "€");
     $("#valueCity2").text(r.amountCity2Numbeo + "€");
     $("#nameCity1").text("Salary in " + r.city1Numbeo);
@@ -156,55 +154,24 @@ function renderSalaries(res){
     $("#netSal2").text(rSal2.netSalary + " €")
 }
 
-function renderGroceries(res){
-    console.log(JSON.parse(res[5]))
-    var rGroceries = JSON.parse(res[5]);
-    var rGroceries2 = JSON.parse(res[6]);
 
-    new Chart(document.getElementById("priceGroceries"), {
-        type: 'line',
-        data: {
-            labels: ["Crime", "Traffic Time", "Health care", "Pollution", "CPI Rent", "Climate", "Safety"],
-            datasets: [ {
-                data: [rIndexes.crime_index,rIndexes.traffic_time_index,rIndexes.health_care_index,rIndexes.pollution_index, rIndexes.cpi_and_rent_index, rIndexes.climate_index, rIndexes.safety_index ],
-                label: city1,
-                borderColor: "#3cba9f",
-                fill: false
-            },  {
-                data: [rIndexes2.crime_index,rIndexes2.traffic_time_index,rIndexes2.health_care_index,rIndexes2.pollution_index, rIndexes2.cpi_and_rent_index, rIndexes2.climate_index, rIndexes2.safety_index ],
-                label: city2,
-                borderColor: "#c45850",
-                fill: false
-            }
-            ]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'World population per region (in millions)'
-            }
-        }
-    });
-
-}
-
-
-/* jQuery.ajax ({
-    url: 'http://localhost:8080/cityComparator',
+ jQuery.ajax ({
+    url: 'http://localhost:8080/cityComparatorv2',
     type: "POST",
     data: JSON.stringify(req),
     dataType: "json",
     contentType: "application/json; charset=utf-8",
     success: function(res){
-
-        renderSalaries(res);
-        renderChart(res);
+        console.log(res)
         renderBars(res);
-        renderGroceries(res);
+        //renderGroceries(res);
 
 
     }
-}); */
+});
+
+
+
 
 
 jQuery.ajax ({
@@ -214,27 +181,28 @@ jQuery.ajax ({
     dataType: "json",
     contentType: "application/json; charset=utf-8",
     success: function(res){
+        jQuery.ajax ({
+            url: 'http://localhost:8080/salaries',
+            type: "POST",
+            data: JSON.stringify(req),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function(salaries){
 
-        renderSalaries(res);
-       // renderChart(res);
+                console.log(res)
+                renderSalaries(res,salaries);
+                renderChart(salaries);
+
+
+            }
+
+
+
+
+        // renderChart(res);
         //renderBars(res);
-       // renderGroceries(res);
+        // renderGroceries(res);
 
 
-    }
-});
-
-
-jQuery.ajax ({
-    url: 'http://localhost:8080/cityComparatorv2',
-    type: "POST",
-    data: JSON.stringify(req),
-    dataType: "json",
-    contentType: "application/json; charset=utf-8",
-    success: function(res){
-
-
-        console.log(res)
-
-    }
-});
+    });
+}});
