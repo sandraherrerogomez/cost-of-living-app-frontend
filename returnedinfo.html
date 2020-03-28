@@ -79,17 +79,21 @@
       <div class="container-fluid">
 
         <!-- Page Heading -->
-        <div class="d-sm-flex justify-content-between mb-4">
-          <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Compare different cities</a>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <a href="userform.html" id="compareButton" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Compare cities</a>
         </div>
-
-        <div class="card shadow mb-4">
+            <div class="col-md-10 mx-auto">
+              <form action="userform.html" method="get" id ="citiesForm"></form>
+            </div>
+        </div>
+      <div class="card shadow mb-4">
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Cost of living comparison (net salary)</h6>
           </div>
           <div id="salariesCompare" class="card-body">
           </div>
         </div>
+      </div>
         <!-- Content Row -->
         <div class="row">
 
