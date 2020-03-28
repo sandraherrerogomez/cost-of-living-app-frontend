@@ -132,6 +132,7 @@ function renderChart(res){
 
 
 function renderSalaries(res){
+    console.log(res);
     var r = JSON.parse(res[0]);
     var rSal1 = JSON.parse(res[1]);
     var rSal2 = JSON.parse(res[2]);
@@ -188,7 +189,7 @@ function renderGroceries(res){
 }
 
 
-jQuery.ajax ({
+/* jQuery.ajax ({
     url: 'http://localhost:8080/cityComparator',
     type: "POST",
     data: JSON.stringify(req),
@@ -200,6 +201,38 @@ jQuery.ajax ({
         renderChart(res);
         renderBars(res);
         renderGroceries(res);
+
+
+    }
+}); */
+
+
+jQuery.ajax ({
+    url: 'http://localhost:8080/colData',
+    type: "POST",
+    data: JSON.stringify(req),
+    dataType: "json",
+    contentType: "application/json; charset=utf-8",
+    success: function(res){
+
+        renderSalaries(res);
+       // renderChart(res);
+        //renderBars(res);
+       // renderGroceries(res);
+
+
+    }
+});
+
+
+jQuery.ajax ({
+    url: 'http://localhost:8080/cityComparatorv2',
+    type: "POST",
+    data: JSON.stringify(req),
+    dataType: "json",
+    contentType: "application/json; charset=utf-8",
+    success: function(res){
+
 
         console.log(res)
 
