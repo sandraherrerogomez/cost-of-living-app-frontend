@@ -136,17 +136,24 @@ function renderSalaries(r, salaries){
     console.log(salaries)
     var rSal1= JSON.parse(salaries[0]);
     var rSal2= JSON.parse(salaries[1]);
-    $("#valueCity1").text(r.amountCity1Numbeo + "€");
-    $("#valueCity2").text(r.amountCity2Numbeo + "€");
-    $("#nameCity1").text("Salary in " + r.city1Numbeo);
-    $("#nameCity2").text("Required Salary in "+ r.city2Numbeo+" to match " + r.city1Numbeo);
+
     // Madrid 15k Bcn 18k      ---- Numbeo 21
     var res = sal2 < r.amountCity2Numbeo ? r.city1Numbeo : r.city2Numbeo;
     var rateDif = sal2/r.amountCity2Numbeo;
 
+    if(r.amountCity2Numbeo != 0){
     $("#salariesCompare").html("You will need <b>"+r.amountCity2Numbeo+"€</b> in <b>"+r.city2Numbeo+ "</b> to have same cost of living than in <b>"+
         r.city1Numbeo+"</b> with <b>"+r.amountCity1Numbeo+ "</b>€ , As your estimated salary for " + city2 + " is <b>" +sal2 + "€</b> , you will have a better economic level of life in <b>" +res  + "</b> <br> Your expected salary its " + rateDif.toFixed(2) + " times the required salary in <b> "+r.city2Numbeo +"</b> to match the level of income in <b>"+city1 +"</b>.");
 
+        $("#valueCity1").text(r.amountCity1Numbeo + "€");
+        $("#valueCity2").text(r.amountCity2Numbeo + "€");
+        $("#nameCity1").text("Salary in " + r.city1Numbeo);
+        $("#nameCity2").text("Required Salary in "+ r.city2Numbeo+" to match " + r.city1Numbeo);
+    } else {
+        $("#salariesCompare").html("There is not enough data about this cities ( " +city1+ " , " +city2 + " )" )
+        $("#card1").hide()
+        $("#card2").hide()
+    }
 
     $("#netSal1title").text("Monthly Net Salary in " + city1 + ", " + rSal1.countryName)
     $("#netSal1").text(rSal1.netSalary + " €")
