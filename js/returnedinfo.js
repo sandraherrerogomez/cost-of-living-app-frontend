@@ -34,11 +34,13 @@ function renderBars(res){
                 {
                     label: city1,
                     backgroundColor: "#3e95cd",
-                    data: [rIndexes.crime_index,rIndexes.traffic_time_index,rIndexes.health_care_index,rIndexes.pollution_index, rIndexes.cpi_and_rent_index, rIndexes.climate_index, rIndexes.safety_index ]
+                    data: [rIndexes.crime_index,rIndexes.traffic_time_index,rIndexes.health_care_index,rIndexes.pollution_index,
+                        rIndexes.cpi_and_rent_index, rIndexes.climate_index, rIndexes.safety_index ]
                 }, {
                     label: city2,
                     backgroundColor: "#8e5ea2",
-                    data: [rIndexes2.crime_index,rIndexes2.traffic_time_index,rIndexes2.health_care_index,rIndexes2.pollution_index, rIndexes2.cpi_and_rent_index, rIndexes2.climate_index, rIndexes2.safety_index ]
+                    data: [rIndexes2.crime_index,rIndexes2.traffic_time_index,rIndexes2.health_care_index,rIndexes2.pollution_index,
+                        rIndexes2.cpi_and_rent_index, rIndexes2.climate_index, rIndexes2.safety_index ]
                 }
             ]
         },
