@@ -47,7 +47,7 @@ function renderBars(res){
         options: {
             title: {
                 display: true,
-                text: 'City Indexes compared with New York (100)'
+                text: 'City Indexes'
             }
         }
     });
