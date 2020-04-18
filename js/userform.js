@@ -23,7 +23,7 @@ window.location.replace("returnedinfo.html?city1="+city1+"&city2="+city2+"&salar
 
 
 jQuery.ajax ({
-    url: 'http://localhost:8080/cities',
+    url: 'https://frozen-shelf-99030.herokuapp.com/cities',
     type: "GET",
 
 

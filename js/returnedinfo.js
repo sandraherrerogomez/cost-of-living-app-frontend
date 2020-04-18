@@ -165,7 +165,7 @@ function renderSalaries(r, salaries){
 
 
  jQuery.ajax ({
-    url: 'http://localhost:8080/cityComparatorv2',
+    url: 'https://frozen-shelf-99030.herokuapp.com/cityComparatorv2',
     type: "POST",
     data: JSON.stringify(req),
     dataType: "json",
@@ -184,14 +184,14 @@ function renderSalaries(r, salaries){
 
 
 jQuery.ajax ({
-    url: 'http://localhost:8080/colData',
+    url: 'https://frozen-shelf-99030.herokuapp.com/colData',
     type: "POST",
     data: JSON.stringify(req),
     dataType: "json",
     contentType: "application/json; charset=utf-8",
     success: function(res){
         jQuery.ajax ({
-            url: 'http://localhost:8080/salaries',
+            url: 'https://frozen-shelf-99030.herokuapp.com/salaries',
             type: "POST",
             data: JSON.stringify(req),
             dataType: "json",
