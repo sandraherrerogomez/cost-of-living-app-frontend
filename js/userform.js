@@ -29,8 +29,8 @@ jQuery.ajax ({
 
     success: function(res){
 
-        var datos = (res);
-
+        var datos = JSON.parse(res);
+        console.log(datos)
         $( function() {
             $( "#currentCity" ).autocomplete({
                 source: datos
