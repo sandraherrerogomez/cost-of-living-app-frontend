@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a79ca689-f73d-4d62-902a-d6e8d8f21d35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/js/returnedinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/returnedinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/returnedinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/returnedinfo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +31,18 @@
       <recent name="C:\Users\sandr\Downloads\startbootstrap-sb-admin-2-gh-pages\startbootstrap-sb-admin-2-gh-pages" />
       <recent name="C:\Users\sandr\Downloads\startbootstrap-sb-admin-2-gh-pages\startbootstrap-sb-admin-2-gh-pages\js" />
     </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
